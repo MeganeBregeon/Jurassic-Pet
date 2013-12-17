@@ -1,35 +1,54 @@
 var barEnergie = document.getElementById('BarEnergy');
-var bar_moyenne = document.getElementById('bla');
-var statusEnergie = document.getElementById('statusEnergy');
-var barFaim = document.getElementById('BarHungry');
-var statusFaim = document.getElementById('statusHungry');
-
-var values = {
-  faim:100,
-  energie:100
-};
-
-document.getElementById('sport').onclick=function(){
-  values.energie-=10;
-}
-
-setInterval(function(){
-
+    barHungry = document.getElementById('BarHungry');
+    wellfare=0;
+    xp=0;
+    values = 
+    {
+      faim:50,
+      energie:50
+    };
+setInterval(function()
+{
   // Energy 
   barEnergie.value=values.energie;
-  values.energie-=2;
+  values.energie-=0.1;
   if(values.energie <= 0) values.energie = 0;
 
   // Food
-  barFaim.value=values.faim;
-  values.faim--;
+  barHungry.value=values.faim;
+  values.faim-=0.1;
   if(values.faim <= 0) values.faim = 0;
 
-  // Moyenne
-  var moyenne = (values.faim + values.energie)/2;
-  document.getElementById('bla').innerHTML = parseInt(moyenne)+"%";
+  // Bien être
+  wellfare = (values.faim + values.energie)/2;
+  document.getElementById('wellfare').innerHTML = parseInt(wellfare)+"%";
+}
+,300);
 
-},500);
+//Faire manger le dino
+document.getElementById('nourriture').onclick=function()
+{
+  values.faim+=30;
+}
+//Prendre un douche
+document.getElementById('douche').onclick=function()
+{
+  values.energie+=20;
+}
+//Dormir
+document.getElementById('dormir').onclick=function()
+{
+  values.energie+=30;
+}
+//experience
+console.log(xp);
+{
+  if (wellfare > 100)
+    xp++;
+    document.getElementById('level-number').innerHTML = xp;
+    console.log(xp);
+}
+
 
 /*function progressBarEnergie(compteur) 
   {
@@ -63,27 +82,27 @@ setInterval(function(){
   }
 var amountLoaded = 100;
 progressBarEnergie(amountLoaded);
-function progressBarFaim(compteurFaim) 
+function progressbarHungry(compteurFaim) 
   {
-    barFaim.value = compteurFaim;
+    barHungry.value = compteurFaim;
     compteurFaim--;
     values.faim=compteurFaim;
-    var timerFaim = setTimeout("progressBarFaim("+compteurFaim+")",700);
+    var timerFaim = setTimeout("progressbarHungry("+compteurFaim+")",700);
       if(compteurFaim == 0)
         {
-          barFaim.value = 0;
+          barHungry.value = 0;
           clearTimeout(timerFaim);
         }
   }
 var amountLoadedFaim = 100;
-progressBarFaim(amountLoadedFaim);
+progressbarHungry(amountLoadedFaim);
 
 function Bonheur()
   {
-    var moyenne = (values.faim+values.energie)/2;
-    bar_moyenne.value = moyenne;
-    var timerBonheur = setTimeout("Bonheur("+moyenne+")",1);
-    document.getElementById('bla').innerHTML = parseInt(moyenne)+"%";
+    var wellfare = (values.faim+values.energie)/2;
+    bar_wellfare.value = wellfare;
+    var timerBonheur = setTimeout("Bonheur("+wellfare+")",1);
+    document.getElementById('bla').innerHTML = parseInt(wellfare)+"%";
   }
 Bonheur();
 */
