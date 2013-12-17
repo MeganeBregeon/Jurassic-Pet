@@ -1,0 +1,22 @@
+#barEnergy
+	{
+		background: red;
+		width: 300px;
+	}
+#BarHungry
+	{
+		background: red;
+		width: 300px;
+		-webkit-transform:rotate(180deg);
+		-o-transform:rotate(180deg);
+		-moz-transform: rotate(180deg);
+	}
+#sport
+	{
+		height: 30px;
+    	width: 30px;
+    	background: red;
+    	position : absolute;
+    	top : 50%;
+    	left : 50%;
+	}
