@@ -1,0 +1,49 @@
+body{
+   font-family: 'Open Sans', sans-serif;
+   background:#ededed;
+}
+h2{
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    text-transform:uppercase;
+}
+h3{
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+}
+.content{
+    width: 768px;
+    height: 744px;
+    background: #ffffff;
+    margin: auto;
+    border-bottom:2px solid #dddddd;
+}
+.title{
+    width: 768px;
+    height: 170px;
+    background: #f6f6f6;
+    padding-top: 40px;
+    border-bottom:2px solid #ededed;
+}
+.select{
+    width: 768px;
+    height: 744px;
+    padding-top:47px;
+}
+
+.perso{
+    height: 400px;
+    float: left;
+}
+#perso01{
+    margin-left: 64px;
+}
+#perso02{
+    margin-left: 60px;
+}
+
+.perso img{
+    border-radius: 10px;
+}
